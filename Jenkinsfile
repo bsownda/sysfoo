@@ -13,12 +13,14 @@ pipeline{
       } //Build stage
       stage('Test'){
         steps{
-            sh 'mvn test'
+            echo 'test maven app'
+            sh 'mvn clean test'
         }
       } //test stage
       stage('Package'){
         steps{
-            sh 'mvn package'
+            echo 'package maven app'
+            sh 'mvn package -DskipTests'
         }
     } //package stage
   } //stages
