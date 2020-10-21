@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       agent {
-        dockerfile {
-          filename 'maven:3.6.3-jdk-11-slim'
+        docker {
+          image 'maven:3.6.3-jdk-11-slim'
         }
 
       }
